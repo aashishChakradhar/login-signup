@@ -1,0 +1,235 @@
+:root{
+    --primary: #7AE2CF;
+    --secondary: #077A7D;
+    --dark: #06202B;
+    --light: #F5EEDD;
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--light); /* Set background to white */
+    color:var(--dark);
+}
+
+/* form styling */
+.form-container {
+    position: relative; /* For positioning the collapse button */
+    margin-left: auto;
+    background-color: var(--primary);
+    padding: 3rem;
+    border-radius: 2rem 0rem 0rem 2rem;
+    box-shadow: -20px 20px 20px grey;
+    transition: width 0.5s ease; /* Smooth transition for collapsing */
+    width: 60%;
+    height: 87vh;
+    overflow: hidden; /* Ensure content is hidden when collapsed */
+}
+.form-title {
+    font-size: 5rem;
+    font-weight: bolder;
+    text-align: center;
+    color: var(--dark);
+    margin: 2rem 1rem;
+    text-shadow: 10px 10px 20px #06202B;;
+}
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+#loginForm .form-group {
+    flex-direction: column; /* Stack all child elements vertically */
+    align-items: center; /* Center the input fields and button horizontally */
+    justify-content: center;
+    height: 70%;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    position: relative; /* Set relative positioning for the parent container */
+}
+#loginForm .input-group{
+    width: 50%;
+    text-align: center;
+}
+.input-field {
+    text-indent: 1.3rem;
+    width: 100%;
+    height: 3rem;
+    margin-top: 0.5rem;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    border: 1px solid var(--light);
+    font-size: 1rem;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 12px #06202B;
+}
+.input-field:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 10px 10px 12px #06202B;
+}
+.input-field:hover{
+    cursor:pointer;
+    transform:scale(1.05);
+}
+/* Style the <select> element to match input fields */
+select.input-field {
+    appearance: none; /* Remove default browser styling */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    padding: 0.5rem; /* Match padding with input fields */
+    height: 3rem; /* Match height with input fields */
+    border-radius: 1rem; /* Match border-radius */
+    border: 1px solid var(--light); /* Match border style */
+    font-size: 1rem; /* Match font size */
+    background-color: white; /* Ensure consistent background */
+    text-indent: 1.3rem; /* Add indentation for consistency */
+    box-sizing: border-box; /* Include padding in height */
+    box-shadow: 10px 10px 12px #06202B;
+}
+.error {
+    color: red; /* Highlight error messages in red */
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-indent: 2rem;
+    position: absolute; /* Position the error message absolutely */
+    bottom: 0rem; /* Position it just below the input field */
+    left: 0; /* Align it to the left of the input field */
+    margin: 0;
+    padding: 0;
+    display: none; /* Hide error messages by default */
+    white-space: nowrap; /* Prevent the error message from wrapping */
+}
+.form-btn {
+    width: 25%;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 0.3rem;
+    margin: 3rem auto;
+    border-radius: 1rem;
+    border-color: var(--dark);
+    color: var(--light);
+    background-color: var(--secondary);
+    box-shadow: 10px 10px 20px black;
+}
+.form-btn:hover{
+    cursor: pointer;
+    border-color: var(--light);
+    transform: scale(1.1);
+}
+
+/* collapse button */
+.form-container.collapsed {
+    width: 3rem; /* Set the width to 5rem when collapsed */
+    height: 87vh; /* Maintain the height */
+    padding: 3rem 0; /* Remove padding when collapsed */
+}
+.collapse-btn {
+    position: absolute;
+    font-size: larger;
+    top: 1.7%;
+    left: 1.5%;
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: var(--secondary);
+    color: var(--light);
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 9px 8px 10px black;
+    transition: transform 0.3s ease;
+    opacity: 75%;
+}
+.collapse-btn:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+.form-container.collapsed .collapse-btn {/*not working*/
+    top: 1.7%;
+    left: 7.5%;
+}
+.form-container.collapsed .form-title,
+.form-container.collapsed .form-group{
+    display: none;
+}
+
+/* Switch Container */
+#switchContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    top: 2%;
+    left: 91%;
+}
+/* Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 7rem;
+    height: 2.3rem;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    z-index: 10;
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--light);
+    color: var(--secondary);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+    border-radius: 34px;
+    padding: 8px 47px;
+    font-weight: 600;
+    font-size: 18px;
+    box-shadow: 10px 10px 18px black;
+    border: 2px solid var(--secondary);
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--secondary);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+.slider:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+input:checked + .slider {
+    background-color: var(--light);
+    padding: 8px 17px;
+}
+input:checked + .slider:before {
+    transform: translateX(4.7rem);
+}
+
+/* Form Visibility */
+.hidden {
+    display: none;
+}
+
+
+/* @media (max-width: 600px) {
+    .form-container {
+        width: 100%;
+        height: fit-content;
+    }
+    .input-field {
+        width: 100%;
+    }
+} */

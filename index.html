@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultimediaLab2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="switchWrapper">
+        <div id="switchContainer">
+            <label class="switch">
+                <input type="checkbox" id="toggleSwitch" onclick="switchForms()">
+                <span class="slider">Signup</span>
+            </label>
+        </div>
+    </div>
+    <form action="index.html" method="post"class = "hidden" id="signupForm" onsubmit="validateSignupForm(event)">
+        <div class="form-container" id="signupFormContainer">
+            <button class="collapse-btn" id="signupCollapseBtn" onclick="collapseForm(event,this.id)" aria-label="Collapse Form">&#10095;</button>
+            <div class="form-title">Sign Up</div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" placeholder="First Name" class="input-field" id = "fname" onblur="validateName(this.value, this.id)">
+                    <small class="error"></small>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Last Name" class="input-field" id = "lname" onblur="validateName(this.value, this.id)">
+                    <small class="error"></small>
+                </div>
+                <div class="input-group">
+                    <input type="number" placeholder="Phone Number" class="input-field" id = "phone" onblur="validatePhone(this.value, this.id)">
+                    <small class="error"></small>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Address" class="input-field" id = "address" >
+                    <small class="error"></small>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="E-mail" class="input-field" id = "signup-email" onblur="validateEmail(this.value,this.id)">
+                    <small class="error"></small>
+                </div>
+                <div class="input-group">
+                    <select id="" class="input-field">
+                        <option value="none" selected>---Select Gender---</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password " class="input-field" id = "password" onblur="validatePassword(this.value, this.id)">
+                    <small class="error"></small>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Confirm Password " class="input-field" id = "cpassword" onblur="validatePassword(this.value, this.id)">
+                    <small class="error"></small>
+                </div>
+                <button type="submit" class="form-btn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+    <form action="index.html" method="post" id="loginForm" onsubmit="validateLoginForm(event)" >
+        <div class="form-container" id="loginFormContainer">
+            <button class="collapse-btn" id="loginCollapseBtn" onclick="collapseForm(event,this.id)" aria-label="Collapse Form">&#10095;</button>
+            <div class="form-title">Log In</div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="email" placeholder="E-mail" class="input-field" id = "login-email" onblur="validateEmail(this.value,this.id)">
+                    <small class="error"></small>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password " class="input-field" id = "login-password" onblur="validatePassword(this.value, this.id)">
+                    <small class="error"></small>
+                </div>
+                <button type="submit" class="form-btn">Login</button>
+            </div>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
