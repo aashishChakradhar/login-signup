@@ -1,13 +1,36 @@
-onload = () => {
+const toggleMobileViewUI = () => {
     const width = window.innerWidth;
-    if(width < 600){
-        document.getElementById("signupCollapseBtn").classList.add("hidden");
-        document.getElementById("loginCollapseBtn").classList.add("hidden");
-        document.getElementById("switchWrapper").classList.add("hidden");
-        document.querySelector(".form-btn.signin.hidden").classList.remove("hidden");
-        document.querySelector(".form-btn.signup.hidden").classList.remove("hidden");
+
+    const signupBtn = document.getElementById("signupCollapseBtn");
+    const loginBtn = document.getElementById("loginCollapseBtn");
+    const switchWrapper = document.getElementById("switchWrapper");
+    const signinBtn = document.querySelector(".form-btn.signin.hidden");
+    const signupHiddenBtn = document.querySelector(".form-btn.signup.hidden");
+
+    if (width < 600) {
+      signupBtn?.classList.add("hidden");
+      loginBtn?.classList.add("hidden");
+      switchWrapper?.classList.add("hidden");
+      signinBtn?.classList.remove("hidden");
+      signupHiddenBtn?.classList.remove("hidden");
+    } else {
+      signupBtn?.classList.remove("hidden");
+      loginBtn?.classList.remove("hidden");
+      switchWrapper?.classList.remove("hidden");
+      // Optionally re-hide those hidden buttons
+      document.querySelector(".form-btn.signin")?.classList.add("hidden");
+      document.querySelector(".form-btn.signup")?.classList.add("hidden");
     }
-}
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    toggleMobileViewUI(); // Run on initial load
+  });
+
+  window.addEventListener("resize", () => {
+    toggleMobileViewUI(); // Re-run on screen resize
+  });
+  
 function validateName(name, idName) {
     const valid = /^[a-zA-Z]+$/; // Regex for alphabetic characters only
     const inputElement = document.getElementById(idName);
