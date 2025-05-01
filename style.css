@@ -254,18 +254,18 @@ input:checked + .slider:before {
     }
     .form-title{
         font-size: 4rem;
-        margin: 2rem 0;
+        margin: 1.2rem 0 1.5rem 0 ;
     }
-    .form-group{
+    #signupForm .form-group{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 1rem
+        gap:1rem;
     }
-    .input-group{
+    #signupForm .input-group{
         text-align: center;
-        width: 45%;
-        margin: .4rem 0;
+        width: 100%;
+        margin: .01rem 0;
     }
     .input-field,
     select.input-field {
