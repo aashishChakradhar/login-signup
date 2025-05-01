@@ -1,3 +1,11 @@
+onload = () => {
+    const width = window.innerWidth;
+    if(width < 600){
+        document.getElementById("signupCollapseBtn").classList.add("hidden");
+        document.getElementById("loginCollapseBtn").classList.add("hidden");
+        // document.getElementById("switchWrapper").classList.add("hidden");
+    }
+}
 function validateName(name, idName) {
     const valid = /^[a-zA-Z]+$/; // Regex for alphabetic characters only
     const inputElement = document.getElementById(idName);

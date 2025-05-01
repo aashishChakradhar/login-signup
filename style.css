@@ -224,12 +224,66 @@ input:checked + .slider:before {
 }
 
 
-/* @media (max-width: 600px) {
-    .form-container {
+@media (max-width: 600px) {
+    html,body{
+        height: 100%;
+        margin: 0;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-container{
+        border-radius: 0;
         width: 100%;
+        background-color: red;
+    }
+    #loginForm .form-container{
+        width: 100%;
+        margin: 0;
+        background-color: var(--secondary);
         height: fit-content;
+        border-radius: 2rem;
+        padding:1rem;
     }
-    .input-field {
+    #loginForm .form-btn{
+        background-color: var(--primary);
+        color: var(--dark);
+    }
+    #loginForm .input-group{
         width: 100%;
     }
-} */
+    .form-title{
+        font-size: 4rem;
+        margin: 2rem 0;
+    }   
+    .form-btn{
+        width: 50%;
+        font-size: 1.2rem;
+        height: 2.2rem;
+    }
+    .form-group{
+        flex-direction: column; /* Stack all child elements vertically */
+        align-items: center; /* Center the input fields and button horizontally */
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0rem;
+    }
+    .input-group{
+        text-align: center;
+        width: 70%;
+        margin: .4rem 0;
+    }
+    .input-field,
+    select.input-field {
+        font-size: 1rem;
+        height: 3rem;
+        margin: 0;
+        padding: 0.2rem;
+    }
+    .error{
+        font-size: 0.6rem;
+    }
+}
