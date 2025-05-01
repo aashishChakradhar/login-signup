@@ -160,7 +160,7 @@ select.input-field {
 #switchContainer {
     position: absolute;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     margin: 0;
     top: 2%;
     left: 91%;
@@ -228,26 +228,23 @@ input:checked + .slider:before {
     html,body{
         height: 100%;
         margin: 0;
-    }
-    body{
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .form-container{
-        border-radius: 0;
-        width: 100%;
-        background-color: red;
-    }
+    .form-container,
     #loginForm .form-container{
         width: 100%;
-        margin: 0;
         background-color: var(--secondary);
         height: fit-content;
         border-radius: 2rem;
         padding:1rem;
-    }
+    }   
+    .form-btn,
     #loginForm .form-btn{
+        width: 50%;
+        font-size: 1.2rem;
+        height: 2.2rem;    
         background-color: var(--primary);
         color: var(--dark);
     }
@@ -257,11 +254,6 @@ input:checked + .slider:before {
     .form-title{
         font-size: 4rem;
         margin: 2rem 0;
-    }   
-    .form-btn{
-        width: 50%;
-        font-size: 1.2rem;
-        height: 2.2rem;
     }
     .form-group{
         flex-direction: column; /* Stack all child elements vertically */
@@ -269,7 +261,7 @@ input:checked + .slider:before {
         justify-content: center;
         width: 100%;
         margin: 0;
-        padding: 0rem;
+        padding: 0;
     }
     .input-group{
         text-align: center;
