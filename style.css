@@ -110,6 +110,7 @@ select.input-field {
     font-weight: bolder;
     padding: 0.3rem;
     margin: 3rem auto;
+    margin-bottom: 1rem;
     border-radius: 1rem;
     border-color: var(--dark);
     color: var(--light);
@@ -234,8 +235,8 @@ input:checked + .slider:before {
     }
     .form-container,
     #loginForm .form-container{
-        width: 100%;
-        background-color: var(--secondary);
+        width: 80vw;
+        background-color: var(--primary);
         height: fit-content;
         border-radius: 2rem;
         padding:1rem;
@@ -244,9 +245,8 @@ input:checked + .slider:before {
     #loginForm .form-btn{
         width: 50%;
         font-size: 1.2rem;
-        height: 2.2rem;    
-        background-color: var(--primary);
-        color: var(--dark);
+        height: 2.2rem;  
+        margin: 0 auto;  
     }
     #loginForm .input-group{
         width: 100%;
@@ -256,16 +256,14 @@ input:checked + .slider:before {
         margin: 2rem 0;
     }
     .form-group{
-        flex-direction: column; /* Stack all child elements vertically */
-        align-items: center; /* Center the input fields and button horizontally */
-        justify-content: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
     }
     .input-group{
         text-align: center;
-        width: 70%;
+        width: 48%;
         margin: .4rem 0;
     }
     .input-field,
@@ -277,5 +275,13 @@ input:checked + .slider:before {
     }
     .error{
         font-size: 0.6rem;
+    }
+    #switchContainer{
+        top: 3%;
+        left: 50%;
+    }
+    .secBtn{
+        background-color: var(--dark);
+        color: var(--light);
     }
 }

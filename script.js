@@ -3,7 +3,9 @@ onload = () => {
     if(width < 600){
         document.getElementById("signupCollapseBtn").classList.add("hidden");
         document.getElementById("loginCollapseBtn").classList.add("hidden");
-        // document.getElementById("switchWrapper").classList.add("hidden");
+        document.getElementById("switchWrapper").classList.add("hidden");
+        document.querySelector(".form-btn.signin.hidden").classList.remove("hidden");
+        document.querySelector(".form-btn.signup.hidden").classList.remove("hidden");
     }
 }
 function validateName(name, idName) {
@@ -173,5 +175,17 @@ function switchForms() {
         signupForm.classList.add("hidden");
         loginForm.classList.remove("hidden");
         document.querySelector(".slider").innerText = "Signup";
+    }
+}
+function toggleForm(event){
+    event.preventDefault();
+    const signupForm = document.getElementById("signupForm");
+    const loginForm = document.getElementById("loginForm");
+    if(signupForm.classList.contains("hidden")){
+        signupForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+    }else{
+        signupForm.classList.add("hidden");
+        loginForm.classList.remove("hidden");
     }
 }

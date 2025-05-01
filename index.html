@@ -56,7 +56,8 @@
                     <input type="password" placeholder="Confirm Password " class="input-field" id = "cpassword" onblur="validatePassword(this.value, this.id)">
                     <small class="error"></small>
                 </div>
-                <button type="submit" class="form-btn">Sign Up</button>
+                <button type="submit" class="form-btn signup">SIGN UP</button>
+                <button type="submit" class="form-btn signin secBtn hidden" onclick="toggleForm(event)">LOG IN</button>
             </div>
         </div>
     </form>
@@ -73,7 +74,8 @@
                     <input type="password" placeholder="Password " class="input-field" id = "login-password" onblur="validatePassword(this.value, this.id)">
                     <small class="error"></small>
                 </div>
-                <button type="submit" class="form-btn">Login</button>
+                <button type="submit" class="form-btn signin">LOG IN</button>
+                <button type="submit" class="form-btn signup secBtn hidden" onclick="toggleForm(event)">SIGN UP</button>
             </div>
         </div>
     </form>
