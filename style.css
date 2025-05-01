@@ -225,7 +225,7 @@ input:checked + .slider:before {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     html,body{
         height: 100%;
         margin: 0;
@@ -240,6 +240,7 @@ input:checked + .slider:before {
         height: fit-content;
         border-radius: 2rem;
         padding:1rem;
+        box-shadow: 20px 20px 20px grey;
     }   
     .form-btn,
     #loginForm .form-btn{
@@ -259,17 +260,17 @@ input:checked + .slider:before {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 1rem;
+        gap: 1rem
     }
     .input-group{
         text-align: center;
-        width: 48%;
+        width: 45%;
         margin: .4rem 0;
     }
     .input-field,
     select.input-field {
         font-size: 1rem;
-        height: 3rem;
+        height: 2.7rem;
         margin: 0;
         padding: 0.2rem;
     }

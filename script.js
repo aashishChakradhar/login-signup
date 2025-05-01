@@ -7,7 +7,7 @@ const toggleMobileViewUI = () => {
     const signinBtn = document.querySelector(".form-btn.signin.hidden");
     const signupHiddenBtn = document.querySelector(".form-btn.signup.hidden");
 
-    if (width < 600) {
+    if (width < 500) {
       signupBtn?.classList.add("hidden");
       loginBtn?.classList.add("hidden");
       switchWrapper?.classList.add("hidden");
@@ -30,7 +30,7 @@ const toggleMobileViewUI = () => {
   window.addEventListener("resize", () => {
     toggleMobileViewUI(); // Re-run on screen resize
   });
-  
+
 function validateName(name, idName) {
     const valid = /^[a-zA-Z]+$/; // Regex for alphabetic characters only
     const inputElement = document.getElementById(idName);
