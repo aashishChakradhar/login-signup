@@ -1,25 +1,35 @@
+// onload = () => {
+//     const width = window.innerWidth;
+//     if(width < 500){
+//         document.getElementById("signupCollapseBtn").classList.add("hidden");
+//         document.getElementById("loginCollapseBtn").classList.add("hidden");
+//         document.getElementById("switchWrapper").classList.add("hidden");
+//         document.querySelector(".form-btn.signin.hidden").classList.remove("hidden");
+//         document.querySelector(".form-btn.signup.hidden").classList.remove("hidden");
+//     }
+// }
 const toggleMobileViewUI = () => {
     const width = window.innerWidth;
 
-    const signupBtn = document.getElementById("signupCollapseBtn");
-    const loginBtn = document.getElementById("loginCollapseBtn");
+    const signupCollapseBtn = document.getElementById("signupCollapseBtn");//collapse button in signup form
+    const loginCollapseBtn = document.getElementById("loginCollapseBtn");//collapse button in login form
     const switchWrapper = document.getElementById("switchWrapper");
-    const signinBtn = document.querySelector(".form-btn.signin.hidden");
-    const signupHiddenBtn = document.querySelector(".form-btn.signup.hidden");
+    const signinHiddenBtn = document.querySelector(".form-btn.signin.secBtn.hidden");//.form-btn.signin.hidden
+    const signupHiddenBtn = document.querySelector(".form-btn.signup.secBtn.hidden");//.form-btn.signup.hidden
 
-    if (width < 500) {
-      signupBtn?.classList.add("hidden");
-      loginBtn?.classList.add("hidden");
+    if (width < 500) {//for mobile view
+      signupCollapseBtn?.classList.add("hidden");
+      loginCollapseBtn?.classList.add("hidden");
       switchWrapper?.classList.add("hidden");
-      signinBtn?.classList.remove("hidden");
+      signinHiddenBtn?.classList.remove("hidden");
       signupHiddenBtn?.classList.remove("hidden");
-    } else {
-      signupBtn?.classList.remove("hidden");
-      loginBtn?.classList.remove("hidden");
+    } else {// for larger screens
+      signupCollapseBtn?.classList.remove("hidden");
+      loginCollapseBtn?.classList.remove("hidden");
       switchWrapper?.classList.remove("hidden");
       // Optionally re-hide those hidden buttons
-      document.querySelector(".form-btn.signin")?.classList.add("hidden");
-      document.querySelector(".form-btn.signup")?.classList.add("hidden");
+      signinHiddenBtn?.classList.add("hidden");
+      signupHiddenBtn?.classList.add("hidden");
     }
   };
 
